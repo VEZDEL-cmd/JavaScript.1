@@ -29,77 +29,154 @@
 
 
 
- 
+
 //  ================================================    2   ================================================
 
-let field1 = "Hello";
-let field2 = "World";
+// let field1 = "Hello";
+// let field2 = "World";
 
-if (field1 !== "" && field2 !== "") {
-  console.log("Обидва поля заповнені");
-} else {
-  console.log("Не всі поля заповнені");
+// if (field1 !== "" && field2 !== "") {
+//   console.log("Обидва поля заповнені");
+// } else {
+//   console.log("Не всі поля заповнені");
+// }
+
+
+
+
+
+// let num1 = 6;
+// let num2 = 5;
+
+// let sum = num1 + num2;
+
+// if (sum > 10) {
+//   console.log("Сума більша за 10");
+// } else {
+//   console.log("Сума менша або дорівнює 10");
+// }
+
+
+
+
+
+
+// let text = "Я вивчаю JavaScript";
+
+// if (text.includes("JavaScript")) {
+//   console.log("Текст містить слово JS");
+// } else {
+//   console.log("Текст не містить слово JS");
+// }
+
+
+
+
+
+// let number = 15;
+
+// if (number > 10 && number < 20) {
+//   console.log("Число входить в діапазон від 10 до 20");
+// } else {
+//   console.log("Число не входить в діапазон від 10 до 20");
+// }
+
+
+
+
+
+
+
+// let name = "Bohdan";
+// let email = "vezdelb@gmail.com";
+// let password = "123456";
+
+// if (
+//   name.length >= 3 &&
+//   email.includes("@") &&
+//   email.includes(".") &&
+//   password.length >= 6
+// ) {
+//   console.log("Перенаправлення на іншу сторінку");
+// } else {
+//   console.log("Помилка: неправильне заповнення");
+// }
+
+
+// ================================================ 3 ====================================================
+
+const drink = "Кава";
+const day = "понеділок";
+const month = 4;
+const color = "червоний";
+const num1 = 10;
+const num2 = 5;
+const operator = "/";
+
+// 1. Напій
+switch (drink) {
+  case "Кава":
+    console.log("Ви обрали каву");
+    break;
+  case "Чай":
+    console.log("Ви обрали чай");
+    break;
+  case "Сік":
+    console.log("Ви обрали сік");
+    break;
+  default:
+    console.log("Невідомий напій");
 }
 
-
-
-
-
-let num1 = 6;
-let num2 = 5;
-
-let sum = num1 + num2;
-
-if (sum > 10) {
-  console.log("Сума більша за 10");
+// 2. День тижня
+if (day === "субота" || day === "неділя") {
+  console.log("Вихідний день");
 } else {
-  console.log("Сума менша або дорівнює 10");
+  console.log("Робочий день");
 }
 
-
-
-
-
-
-let text = "Я вивчаю JavaScript";
-
-if (text.includes("JavaScript")) {
-  console.log("Текст містить слово JS");
+// 3. Пора року
+if (month >= 3 && month <= 5) {
+  console.log("Весна");
+} else if (month >= 6 && month <= 8) {
+  console.log("Літо");
+} else if (month >= 9 && month <= 11) {
+  console.log("Осінь");
+} else if (month === 12 || month === 1 || month === 2) {
+  console.log("Зима");
 } else {
-  console.log("Текст не містить слово JS");
+  console.log("Невірний місяць");
 }
 
-
-
-
-
-let number = 15;
-
-if (number > 10 && number < 20) {
-  console.log("Число входить в діапазон від 10 до 20");
+// 4. Колір
+if (color === "червоний") {
+  console.log("стоп");
+} else if (color === "зелений") {
+  console.log("йти");
+} else if (color === "жовтий") {
+  console.log("чекати");
 } else {
-  console.log("Число не входить в діапазон від 10 до 20");
+  console.log("Невідомий колір");
 }
 
-
-
-
-
-
-
-let name = "Bohdan";
-let email = "vezdelb@gmail.com";
-let password = "123456";
-
-if (
-  name.length >= 3 &&
-  email.includes("@") &&
-  email.includes(".") &&
-  password.length >= 6
-) {
-  console.log("Перенаправлення на іншу сторінку");
-} else {
-  console.log("Помилка: неправильне заповнення");
+// 5. Калькулятор
+switch (operator) {
+  case "+":
+    console.log(num1 + num2);
+    break;
+  case "-":
+    console.log(num1 - num2);
+    break;
+  case "*":
+    console.log(num1 * num2);
+    break;
+  case "/":
+    if (num2 === 0) {
+      console.log("Ділення на нуль неможливе");
+    } else {
+      console.log(num1 / num2);
+    }
+    break;
+  default:
+    console.log("Невідомий оператор");
 }
-
-
