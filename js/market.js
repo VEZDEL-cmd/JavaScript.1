@@ -105,78 +105,125 @@
 
 // ================================================ 3 ====================================================
 
-const drink = "Кава";
-const day = "понеділок";
-const month = 4;
-const color = "червоний";
-const num1 = 10;
-const num2 = 5;
-const operator = "/";
+// const drink = "Кава";
+// const day = "понеділок";
+// const month = 4;
+// const color = "червоний";
+// const num1 = 10;
+// const num2 = 5;
+// const operator = "/";
 
-// 1. Напій
-switch (drink) {
-  case "Кава":
-    console.log("Ви обрали каву");
-    break;
-  case "Чай":
-    console.log("Ви обрали чай");
-    break;
-  case "Сік":
-    console.log("Ви обрали сік");
-    break;
-  default:
-    console.log("Невідомий напій");
+// // 1. Напій
+// switch (drink) {
+//   case "Кава":
+//     console.log("Ви обрали каву");
+//     break;
+//   case "Чай":
+//     console.log("Ви обрали чай");
+//     break;
+//   case "Сік":
+//     console.log("Ви обрали сік");
+//     break;
+//   default:
+//     console.log("Невідомий напій");
+// }
+
+// // 2. День тижня
+// if (day === "субота" || day === "неділя") {
+//   console.log("Вихідний день");
+// } else {
+//   console.log("Робочий день");
+// }
+
+// // 3. Пора року
+// if (month >= 3 && month <= 5) {
+//   console.log("Весна");
+// } else if (month >= 6 && month <= 8) {
+//   console.log("Літо");
+// } else if (month >= 9 && month <= 11) {
+//   console.log("Осінь");
+// } else if (month === 12 || month === 1 || month === 2) {
+//   console.log("Зима");
+// } else {
+//   console.log("Невірний місяць");
+// }
+
+// // 4. Колір
+// if (color === "червоний") {
+//   console.log("стоп");
+// } else if (color === "зелений") {
+//   console.log("йти");
+// } else if (color === "жовтий") {
+//   console.log("чекати");
+// } else {
+//   console.log("Невідомий колір");
+// }
+
+// // 5. Калькулятор
+// switch (operator) {
+//   case "+":
+//     console.log(num1 + num2);
+//     break;
+//   case "-":
+//     console.log(num1 - num2);
+//     break;
+//   case "*":
+//     console.log(num1 * num2);
+//     break;
+//   case "/":
+//     if (num2 === 0) {
+//       console.log("Ділення на нуль неможливе");
+//     } else {
+//       console.log(num1 / num2);
+//     }
+//     break;
+//   default:
+//     console.log("Невідомий оператор");
+// }
+
+
+
+
+// ==================================================================   4  ==========================================================
+
+
+// 1.
+let i = 1;
+
+while (i <= 10) {
+  console.log(i);
+  i++;
 }
 
-// 2. День тижня
-if (day === "субота" || day === "неділя") {
-  console.log("Вихідний день");
-} else {
-  console.log("Робочий день");
+// 2.
+for (let j = 2; j <= 20; j++) {
+  if (j % 2 !== 0) continue;  
+  console.log(j);
 }
 
-// 3. Пора року
-if (month >= 3 && month <= 5) {
-  console.log("Весна");
-} else if (month >= 6 && month <= 8) {
-  console.log("Літо");
-} else if (month >= 9 && month <= 11) {
-  console.log("Осінь");
-} else if (month === 12 || month === 1 || month === 2) {
-  console.log("Зима");
-} else {
-  console.log("Невірний місяць");
+// 3.
+const num = 7;
+
+for (let k = 1; k <= 10; k++) {
+  console.log(`${num} * ${k} = ${num * k}`);
 }
 
-// 4. Колір
-if (color === "червоний") {
-  console.log("стоп");
-} else if (color === "зелений") {
-  console.log("йти");
-} else if (color === "жовтий") {
-  console.log("чекати");
-} else {
-  console.log("Невідомий колір");
+// 4.
+const n = 8;
+
+for (let x = 1; x <= 20; x++) {
+  if (x >= n) break;
+  console.log(x);
 }
 
-// 5. Калькулятор
-switch (operator) {
-  case "+":
-    console.log(num1 + num2);
-    break;
-  case "-":
-    console.log(num1 - num2);
-    break;
-  case "*":
-    console.log(num1 * num2);
-    break;
-  case "/":
-    if (num2 === 0) {
-      console.log("Ділення на нуль неможливе");
-    } else {
-      console.log(num1 / num2);
-    }
-    break;
-  default:
-    console.log("Невідомий оператор");
+// 5.
+let y = 1;
+
+while (y <= 20) {
+  if (y % 3 === 0) {
+    y++;
+    continue;
+  }
+  console.log(y);
+  y++;
 }
