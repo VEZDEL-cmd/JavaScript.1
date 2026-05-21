@@ -187,43 +187,144 @@
 // ==================================================================   4  ==========================================================
 
 
+// // 1.
+// let i = 1;
+
+// while (i <= 10) {
+//   console.log(i);
+//   i++;
+// }
+
+// // 2.
+// for (let j = 2; j <= 20; j++) {
+//   if (j % 2 !== 0) continue;  
+//   console.log(j);
+// }
+
+// // 3.
+// const num = 7;
+
+// for (let k = 1; k <= 10; k++) {
+//   console.log(`${num} * ${k} = ${num * k}`);
+// }
+
+// // 4.
+// const n = 8;
+
+// for (let x = 1; x <= 20; x++) {
+//   if (x >= n) break;
+//   console.log(x);
+// }
+
+// // 5.
+// let y = 1;
+
+// while (y <= 20) {
+//   if (y % 3 === 0) {
+//     y++;
+//     continue;
+//   }
+//   console.log(y);
+//   y++;
+// }
+
+
+
+
+// ==================================================================  lesson  =================================================================
+// function sumArray(arr) {
+//   let sum = 0;
+//   for (let i = 0; i < arr.length; i++) {
+//     sum = sum + arr[i]
+//   }
+// return sum
+// }
+
+// console.log(sumArray([1, 2, 3, 4]));
+
+
+
+
+// ==================================================================   5  ==========================================================
 // 1.
-let i = 1;
 
-while (i <= 10) {
-  console.log(i);
-  i++;
+const numbers = [1, 2, 3];
+
+numbers[1] = 10;
+
+console.log(numbers);
+
+
+
+// 2.  
+
+const fruits = ["apple", "banana", "orange"];
+
+fruits.push("grape");
+
+console.log(fruits);
+
+
+
+// 3.  
+
+const nums = [5, 10, 15, 20];
+
+let sum = 0;
+
+for (let i = 0; i < nums.length; i++) {
+  sum += nums[i];
 }
 
-// 2.
-for (let j = 2; j <= 20; j++) {
-  if (j % 2 !== 0) continue;  
-  console.log(j);
+console.log(sum);
+
+
+
+// 4. 
+
+const arr = [1, 2, 3, 4, 5];
+
+for (let i = 0; i < arr.length; i++) {
+  console.log(arr[i]);
 }
 
-// 3.
-const num = 7;
 
-for (let k = 1; k <= 10; k++) {
-  console.log(`${num} * ${k} = ${num * k}`);
-}
 
-// 4.
-const n = 8;
+// 5.  
+const words = ["apple", "banana", "orange", "kiwi", "strawberry"];
 
-for (let x = 1; x <= 20; x++) {
-  if (x >= n) break;
-  console.log(x);
-}
-
-// 5.
-let y = 1;
-
-while (y <= 20) {
-  if (y % 3 === 0) {
-    y++;
-    continue;
+for (let i = 0; i < words.length; i++) {
+  if (words[i].length > 5) {
+    console.log(words[i]);
   }
-  console.log(y);
-  y++;
 }
+
+
+
+// 6. 
+
+const numbers2 = [5, 12, 45, 7, 89, 23, 1, 67, 34, 10];
+
+let max = numbers2[0];
+
+for (let i = 0; i < numbers2.length; i++) {
+  if (numbers2[i] > max) {
+    max = numbers2[i];
+  }
+}
+
+console.log(max);
+
+
+
+// 7.  
+
+const numbers3 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+for (let i = 0; i < numbers3.length; i++) {
+  if (numbers3[i] % 2 === 0) {
+    console.log(numbers3[i]);
+  }
+}
+
+
