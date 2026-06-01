@@ -246,85 +246,146 @@
 
 
 // ==================================================================   5  ==========================================================
+// // 1.
+
+// const numbers = [1, 2, 3];
+
+// numbers[1] = 10;
+
+// console.log(numbers);
+
+
+
+// // 2.  
+
+// const fruits = ["apple", "banana", "orange"];
+
+// fruits.push("grape");
+
+// console.log(fruits);
+
+
+
+// // 3.  
+
+// const nums = [5, 10, 15, 20];
+
+// let sum = 0;
+
+// for (let i = 0; i < nums.length; i++) {
+//   sum += nums[i];
+// }
+
+// console.log(sum);
+
+
+
+// // 4. 
+
+// const arr = [1, 2, 3, 4, 5];
+
+// for (let i = 0; i < arr.length; i++) {
+//   console.log(arr[i]);
+// }
+
+
+
+// // 5.  
+// const words = ["apple", "banana", "orange", "kiwi", "strawberry"];
+
+// for (let i = 0; i < words.length; i++) {
+//   if (words[i].length > 5) {
+//     console.log(words[i]);
+//   }
+// }
+
+
+
+// // 6. 
+
+// const numbers2 = [5, 12, 45, 7, 89, 23, 1, 67, 34, 10];
+
+// let max = numbers2[0];
+
+// for (let i = 0; i < numbers2.length; i++) {
+//   if (numbers2[i] > max) {
+//     max = numbers2[i];
+//   }
+// }
+
+// console.log(max);
+
+
+
+// // 7.  
+
+// const numbers3 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+// for (let i = 0; i < numbers3.length; i++) {
+//   if (numbers3[i] % 2 === 0) {
+//     console.log(numbers3[i]);
+//   }
+// }
+
+
+// ==================================================================   6  ==========================================================
+
 // 1.
+const friends1 = ['Mango', 'Poly', 'Kiwi', 'Ajax'];
 
-const numbers = [1, 2, 3];
+let string1 = '';
 
-numbers[1] = 10;
+for (let i = 0; i < friends1.length; i++) {
+  string1 += friends1[i];
 
-console.log(numbers);
-
-
-
-// 2.  
-
-const fruits = ["apple", "banana", "orange"];
-
-fruits.push("grape");
-
-console.log(fruits);
-
-
-
-// 3.  
-
-const nums = [5, 10, 15, 20];
-
-let sum = 0;
-
-for (let i = 0; i < nums.length; i++) {
-  sum += nums[i];
-}
-
-console.log(sum);
-
-
-
-// 4. 
-
-const arr = [1, 2, 3, 4, 5];
-
-for (let i = 0; i < arr.length; i++) {
-  console.log(arr[i]);
-}
-
-
-
-// 5.  
-const words = ["apple", "banana", "orange", "kiwi", "strawberry"];
-
-for (let i = 0; i < words.length; i++) {
-  if (words[i].length > 5) {
-    console.log(words[i]);
+  if (i < friends1.length - 1) {
+    string1 += ', ';
   }
 }
 
+console.log(string1);
 
 
-// 6. 
+const friends2 = ['Mango', 'Poly', 'Kiwi', 'Ajax'];
 
-const numbers2 = [5, 12, 45, 7, 89, 23, 1, 67, 34, 10];
+const string2 = friends2.join(', ');
 
-let max = numbers2[0];
-
-for (let i = 0; i < numbers2.length; i++) {
-  if (numbers2[i] > max) {
-    max = numbers2[i];
-  }
-}
-
-console.log(max);
+console.log(string2);
 
 
 
-// 7.  
 
-const numbers3 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// 2.
 
-for (let i = 0; i < numbers3.length; i++) {
-  if (numbers3[i] % 2 === 0) {
-    console.log(numbers3[i]);
-  }
-}
+const cards = [
+  'Карточка-1',
+  'Карточка-2',
+  'Карточка-3',
+  'Карточка-4',
+  'Карточка-5',
+];
 
+/// 3.
+const cardToRemove = 'Карточка-3';
 
+const removeIndex = cards.indexOf(cardToRemove);
+
+cards.splice(removeIndex, 1);
+
+console.log(cards);
+
+// 4.
+const cardToInsert = 'Карточка-6';
+
+cards.splice(cards.length, 0, cardToInsert);
+
+console.log(cards);
+
+// 5.
+const cardToUpdate = 'Карточка-4';
+
+const updateIndex = cards.indexOf(cardToUpdate);
+
+cards.splice(updateIndex, 1, 'Оновлена Карточка-4');
+
+console.log(cards);
