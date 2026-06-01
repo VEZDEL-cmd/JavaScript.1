@@ -513,116 +513,218 @@
 
 
 
-// 1.
-const numbers = [1, 5, 8, 12, 3, 15, 7, 20];
-const words = ['кіт', 'собака', 'миша', 'папуга', 'хомяк'];
+// // 1.
+// const numbers = [1, 5, 8, 12, 3, 15, 7, 20];
+// const words = ['кіт', 'собака', 'миша', 'папуга', 'хомяк'];
 
-function countItems(array, condition) {
-  let count = 0;
+// function countItems(array, condition) {
+  //   let count = 0;
+  
+  //   for (const element of array) {
+    //     if (condition(element)) {
+      //       count++;
+      //     }
+      //   }
+      
+      //   return count;
+      // }
+      
+      // const isEven = num => num % 2 === 0;
+      // const isLarge = num => num > 10;
+      // const isShort = word => word.length <= 3;
+      
+      // console.log('Парних чисел:', countItems(numbers, isEven));
+      // console.log('Чисел більше 10:', countItems(numbers, isLarge));
+      // console.log('Коротких слів:', countItems(words, isShort));
+      
+      
+      
+      
+      
+      
+      // // 2.
+      // const calculate = (a, b, operation) => {
+        //   return operation(a, b);
+        // };
+        
+        // const add = (a, b) => a + b;
+        
+        // const subtract = (a, b) => a - b;
+        
+        // const multiply = (a, b) => a * b;
+        
+        // const divide = (a, b) => {
+          //   if (b === 0) {
+            //     return 'Помилка: ділення на нуль';
+            //   }
+            
+            //   return a / b;
+            // };
+            
+            // console.log(calculate(10, 5, add));
+            // console.log(calculate(10, 5, subtract));
+            // console.log(calculate(10, 5, multiply));
+            // console.log(calculate(10, 5, divide));
+            // console.log(calculate(10, 0, divide));
+            
+            
+            
+            
+            
+            
+            
+            
+            // // 3.
+            // function repeatMessage(times, messageCreator) {
+              //   for (let i = 0; i < times; i++) {
+                //     console.log(messageCreator(i));
+                //   }
+                // }
+                
+                // repeatMessage(3, index => `Повідомлення №${index + 1}`);
+                
+                // repeatMessage(5, index => `Привіт! Ітерація ${index + 1}`);
+                
+                
+                
+                
+                
+                
+                
+                
+                // // 4.
+                // const movies = [
+                  //   'Avatar',
+                  //   'Titanic',
+                  //   'Interstellar',
+                  //   'Joker',
+                  // ];
+                  
+                  // function processMovies(movies, action) {
+                    //   for (let i = 0; i < movies.length; i++) {
+                      //     action(movies[i], i);
+                      //   }
+                      // }
+                      
+                      // // 1. Показати назву фільму
+                      // const showMovie = (movie, index) => {
+                        //   console.log(`${index + 1}. ${movie}`);
+                        // };
+                        
+                        // // 2. Показати великими літерами
+                        // const upperMovie = (movie) => {
+                          //   console.log(movie.toUpperCase());
+                          // };
+                          
+                          // // 3. Показати довжину назви
+                          // const movieLength = (movie) => {
+                            //   console.log(`${movie} - ${movie.length} символів`);
+                            // };
+                            
+                            // processMovies(movies, showMovie);
+                            
+                            // processMovies(movies, upperMovie);
+                            
+                            // processMovies(movies, movieLength);
 
-  for (const element of array) {
-    if (condition(element)) {
-      count++;
+// ==================================================================   8  ==========================================================
+
+
+//1.
+
+const bankAccount = {
+  ownerName: "Богдан",
+  accountNumber: "123456789",
+  balance: 1000,
+
+  deposit(amount) {
+    this.balance += amount;
+    alert(`Рахунок поповнено. Залишок: ${this.balance} грн`);
+  },
+
+  withdraw(amount) {
+    if (amount > this.balance) {
+      alert("Недостатньо коштів!");
+      return;
     }
-  }
 
-  return count;
+    this.balance -= amount;
+    alert(`Готівку отримано. Залишок: ${this.balance} грн`);
+  },
+};
+
+const operation = confirm("Натисніть OK для поповнення рахунку, Cancel для зняття коштів");
+
+const amount = Number(prompt("Введіть суму"));
+
+if (operation) {
+  bankAccount.deposit(amount);
+} else {
+  bankAccount.withdraw(amount);
 }
 
-const isEven = num => num % 2 === 0;
-const isLarge = num => num > 10;
-const isShort = word => word.length <= 3;
 
-console.log('Парних чисел:', countItems(numbers, isEven));
-console.log('Чисел більше 10:', countItems(numbers, isLarge));
-console.log('Коротких слів:', countItems(words, isShort));
+// 2. 
 
+const weather = {
+  temperature: Number(prompt("Введіть температуру")),
 
+  humidity: 70,
+  windSpeed: 15,
 
-
-
-
-// 2.
-const calculate = (a, b, operation) => {
-  return operation(a, b);
+  isFreezing() {
+    return this.temperature < 0;
+  },
 };
 
-const add = (a, b) => a + b;
-
-const subtract = (a, b) => a - b;
-
-const multiply = (a, b) => a * b;
-
-const divide = (a, b) => {
-  if (b === 0) {
-    return 'Помилка: ділення на нуль';
-  }
-
-  return a / b;
-};
-
-console.log(calculate(10, 5, add));
-console.log(calculate(10, 5, subtract));
-console.log(calculate(10, 5, multiply));
-console.log(calculate(10, 5, divide));
-console.log(calculate(10, 0, divide));
-
-
-
-
-
-
-
-
-// 3.
-function repeatMessage(times, messageCreator) {
-  for (let i = 0; i < times; i++) {
-    console.log(messageCreator(i));
-  }
+if (weather.isFreezing()) {
+  alert("Температура нижче 0 градусів Цельсія");
+} else {
+  alert("Температура вище або дорівнює 0 градусів Цельсія");
 }
 
-repeatMessage(3, index => `Повідомлення №${index + 1}`);
 
-repeatMessage(5, index => `Привіт! Ітерація ${index + 1}`);
+// 3. 
 
+const user = {
+  name: "Bohdan",
+  email: "bohdan@gmail.com",
+  password: "123456",
 
-
-
-
-
-
-
-// 4.
-const movies = [
-  'Avatar',
-  'Titanic',
-  'Interstellar',
-  'Joker',
-];
-
-function processMovies(movies, action) {
-  for (let i = 0; i < movies.length; i++) {
-    action(movies[i], i);
-  }
-}
-
-// 1. Показати назву фільму
-const showMovie = (movie, index) => {
-  console.log(`${index + 1}. ${movie}`);
+  login(inputEmail, inputPassword) {
+    if (
+      inputEmail === this.email &&
+      inputPassword === this.password
+    ) {
+      console.log("Вхід успішний");
+    } else {
+      console.log("Невірний email або пароль");
+    }
+  },
 };
 
-// 2. Показати великими літерами
-const upperMovie = (movie) => {
-  console.log(movie.toUpperCase());
+const enteredEmail = prompt("Введіть email");
+const enteredPassword = prompt("Введіть пароль");
+
+user.login(enteredEmail, enteredPassword);
+
+
+// 4. 
+
+const movie = {
+  title: "Interstellar",
+  director: "Christopher Nolan",
+  year: 2014,
+  rating: 8.6,
+
+  isTopRated() {
+    return this.rating > 8;
+  },
 };
 
-// 3. Показати довжину назви
-const movieLength = (movie) => {
-  console.log(`${movie} - ${movie.length} символів`);
-};
+console.log("Назва:", movie.title);
+console.log("Режисер:", movie.director);
+console.log("Рік:", movie.year);
+console.log("Рейтинг:", movie.rating);
 
-processMovies(movies, showMovie);
-
-processMovies(movies, upperMovie);
-
-processMovies(movies, movieLength);
+console.log(movie.isTopRated());
