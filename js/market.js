@@ -396,109 +396,233 @@
 // ==================================================================   7  ==========================================================
 
 
+// // 1.
+// function logItems(array) {
+//   for (let i = 0; i < array.length; i++) {
+//     console.log(`${i + 1} - ${array[i]}`);
+//   }
+// }
+
+// logItems(['Mango', 'Poly', 'Ajax']);
+
+// // 2.
+// function calculateEngravingPrice(message, pricePerWord) {
+//   const words = message.split(' ');
+//   return words.length * pricePerWord;
+// }
+
+// console.log(calculateEngravingPrice('JavaScript це круто', 10));
+// // 3.
+//   function findLongestWord(string) {
+//   const words = string.split(' ');
+//   let longestWord = words[0];
+
+//   for (let i = 0; i < words.length; i++) {
+//     if (words[i].length > longestWord.length) {
+//       longestWord = words[i];
+//     }
+//   }
+
+//   return longestWord;
+// }
+
+// console.log(findLongestWord('Я вивчаю JavaScript'));
+
+// // 4.
+// function formatString(string) {
+//   if (string.length <= 40) {
+//     return string;
+//   }
+
+//   return string.slice(0, 40) + '...';
+// }
+
+// console.log(formatString('Це дуже довгий рядок який потрібно обрізати тому що він перевищує сорок символів'));
+
+
+// // 5.
+// function checkForSpam(message) {
+//   const lowerCaseMessage = message.toLowerCase();
+
+//   return (
+//     lowerCaseMessage.includes('spam') ||
+//     lowerCaseMessage.includes('sale')
+//   );
+// }
+
+// console.log(checkForSpam('Latest SALE today'));
+// console.log(checkForSpam('Hello friend'));
+
+// // 6.
+
+// let input;
+// const numbers = [];
+// let total = 0;
+
+// while (true) {
+//   input = prompt('Введіть число');
+
+//   if (input === null) {
+//     break;
+//   }
+
+//   numbers.push(Number(input));
+// }
+
+// for (let i = 0; i < numbers.length; i++) {
+//   total += numbers[i];
+// }
+
+// console.log(`Загальна сума чисел дорівнює ${total}`);
+
+// // 7.
+// const logins = ['Mango', 'Poly', 'Ajax'];
+
+// function isLoginValid(login) {
+//   return login.length >= 4 && login.length <= 16;
+// }
+
+// function isLoginUnique(allLogins, login) {
+//   return !allLogins.includes(login);
+// }
+
+// function addLogin(allLogins, login) {
+//   if (!isLoginValid(login)) {
+//     return 'Помилка! Логін повинен бути від 4 до 16 символів';
+//   }
+
+//   if (!isLoginUnique(allLogins, login)) {
+//     return 'Такий логін уже використовується!';
+//   }
+
+//   allLogins.push(login);
+
+//   return 'Логін успішно доданий!';
+// }
+
+// console.log(addLogin(logins, 'Bohdan'));
+// console.log(logins);
+
+
+
+
+
+// ==================================================================   8  ==========================================================
+
+
+
+
+
 // 1.
-function logItems(array) {
-  for (let i = 0; i < array.length; i++) {
-    console.log(`${i + 1} - ${array[i]}`);
-  }
-}
+const numbers = [1, 5, 8, 12, 3, 15, 7, 20];
+const words = ['кіт', 'собака', 'миша', 'папуга', 'хомяк'];
 
-logItems(['Mango', 'Poly', 'Ajax']);
+function countItems(array, condition) {
+  let count = 0;
 
-// 2.
-function calculateEngravingPrice(message, pricePerWord) {
-  const words = message.split(' ');
-  return words.length * pricePerWord;
-}
-
-console.log(calculateEngravingPrice('JavaScript це круто', 10));
-// 3.
-  function findLongestWord(string) {
-  const words = string.split(' ');
-  let longestWord = words[0];
-
-  for (let i = 0; i < words.length; i++) {
-    if (words[i].length > longestWord.length) {
-      longestWord = words[i];
+  for (const element of array) {
+    if (condition(element)) {
+      count++;
     }
   }
 
-  return longestWord;
+  return count;
 }
 
-console.log(findLongestWord('Я вивчаю JavaScript'));
+const isEven = num => num % 2 === 0;
+const isLarge = num => num > 10;
+const isShort = word => word.length <= 3;
+
+console.log('Парних чисел:', countItems(numbers, isEven));
+console.log('Чисел більше 10:', countItems(numbers, isLarge));
+console.log('Коротких слів:', countItems(words, isShort));
+
+
+
+
+
+
+// 2.
+const calculate = (a, b, operation) => {
+  return operation(a, b);
+};
+
+const add = (a, b) => a + b;
+
+const subtract = (a, b) => a - b;
+
+const multiply = (a, b) => a * b;
+
+const divide = (a, b) => {
+  if (b === 0) {
+    return 'Помилка: ділення на нуль';
+  }
+
+  return a / b;
+};
+
+console.log(calculate(10, 5, add));
+console.log(calculate(10, 5, subtract));
+console.log(calculate(10, 5, multiply));
+console.log(calculate(10, 5, divide));
+console.log(calculate(10, 0, divide));
+
+
+
+
+
+
+
+
+// 3.
+function repeatMessage(times, messageCreator) {
+  for (let i = 0; i < times; i++) {
+    console.log(messageCreator(i));
+  }
+}
+
+repeatMessage(3, index => `Повідомлення №${index + 1}`);
+
+repeatMessage(5, index => `Привіт! Ітерація ${index + 1}`);
+
+
+
+
+
+
+
 
 // 4.
-function formatString(string) {
-  if (string.length <= 40) {
-    return string;
+const movies = [
+  'Avatar',
+  'Titanic',
+  'Interstellar',
+  'Joker',
+];
+
+function processMovies(movies, action) {
+  for (let i = 0; i < movies.length; i++) {
+    action(movies[i], i);
   }
-
-  return string.slice(0, 40) + '...';
 }
 
-console.log(formatString('Це дуже довгий рядок який потрібно обрізати тому що він перевищує сорок символів'));
+// 1. Показати назву фільму
+const showMovie = (movie, index) => {
+  console.log(`${index + 1}. ${movie}`);
+};
 
+// 2. Показати великими літерами
+const upperMovie = (movie) => {
+  console.log(movie.toUpperCase());
+};
 
-// 5.
-function checkForSpam(message) {
-  const lowerCaseMessage = message.toLowerCase();
+// 3. Показати довжину назви
+const movieLength = (movie) => {
+  console.log(`${movie} - ${movie.length} символів`);
+};
 
-  return (
-    lowerCaseMessage.includes('spam') ||
-    lowerCaseMessage.includes('sale')
-  );
-}
+processMovies(movies, showMovie);
 
-console.log(checkForSpam('Latest SALE today'));
-console.log(checkForSpam('Hello friend'));
+processMovies(movies, upperMovie);
 
-// 6.
-
-let input;
-const numbers = [];
-let total = 0;
-
-while (true) {
-  input = prompt('Введіть число');
-
-  if (input === null) {
-    break;
-  }
-
-  numbers.push(Number(input));
-}
-
-for (let i = 0; i < numbers.length; i++) {
-  total += numbers[i];
-}
-
-console.log(`Загальна сума чисел дорівнює ${total}`);
-
-// 7.
-const logins = ['Mango', 'Poly', 'Ajax'];
-
-function isLoginValid(login) {
-  return login.length >= 4 && login.length <= 16;
-}
-
-function isLoginUnique(allLogins, login) {
-  return !allLogins.includes(login);
-}
-
-function addLogin(allLogins, login) {
-  if (!isLoginValid(login)) {
-    return 'Помилка! Логін повинен бути від 4 до 16 символів';
-  }
-
-  if (!isLoginUnique(allLogins, login)) {
-    return 'Такий логін уже використовується!';
-  }
-
-  allLogins.push(login);
-
-  return 'Логін успішно доданий!';
-}
-
-console.log(addLogin(logins, 'Bohdan'));
-console.log(logins);
+processMovies(movies, movieLength);
