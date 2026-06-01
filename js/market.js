@@ -330,62 +330,175 @@
 
 // ==================================================================   6  ==========================================================
 
+// // 1.
+// const friends1 = ['Mango', 'Poly', 'Kiwi', 'Ajax'];
+
+// let string1 = '';
+
+// for (let i = 0; i < friends1.length; i++) {
+//   string1 += friends1[i];
+
+//   if (i < friends1.length - 1) {
+//     string1 += ', ';
+//   }
+// }
+
+// console.log(string1);
+
+
+// const friends2 = ['Mango', 'Poly', 'Kiwi', 'Ajax'];
+
+// const string2 = friends2.join(', ');
+
+// console.log(string2);
+
+
+
+
+// // 2.
+
+// const cards = [
+//   'Карточка-1',
+//   'Карточка-2',
+//   'Карточка-3',
+//   'Карточка-4',
+//   'Карточка-5',
+// ];
+
+// /// 3.
+// const cardToRemove = 'Карточка-3';
+
+// const removeIndex = cards.indexOf(cardToRemove);
+
+// cards.splice(removeIndex, 1);
+
+// console.log(cards);
+
+// // 4.
+// const cardToInsert = 'Карточка-6';
+
+// cards.splice(cards.length, 0, cardToInsert);
+
+// console.log(cards);
+
+// // 5.
+// const cardToUpdate = 'Карточка-4';
+
+// const updateIndex = cards.indexOf(cardToUpdate);
+
+// cards.splice(updateIndex, 1, 'Оновлена Карточка-4');
+
+// console.log(cards);\
+
+
+
+
+// ==================================================================   7  ==========================================================
+
+
 // 1.
-const friends1 = ['Mango', 'Poly', 'Kiwi', 'Ajax'];
-
-let string1 = '';
-
-for (let i = 0; i < friends1.length; i++) {
-  string1 += friends1[i];
-
-  if (i < friends1.length - 1) {
-    string1 += ', ';
+function logItems(array) {
+  for (let i = 0; i < array.length; i++) {
+    console.log(`${i + 1} - ${array[i]}`);
   }
 }
 
-console.log(string1);
-
-
-const friends2 = ['Mango', 'Poly', 'Kiwi', 'Ajax'];
-
-const string2 = friends2.join(', ');
-
-console.log(string2);
-
-
-
+logItems(['Mango', 'Poly', 'Ajax']);
 
 // 2.
+function calculateEngravingPrice(message, pricePerWord) {
+  const words = message.split(' ');
+  return words.length * pricePerWord;
+}
 
-const cards = [
-  'Карточка-1',
-  'Карточка-2',
-  'Карточка-3',
-  'Карточка-4',
-  'Карточка-5',
-];
+console.log(calculateEngravingPrice('JavaScript це круто', 10));
+// 3.
+  function findLongestWord(string) {
+  const words = string.split(' ');
+  let longestWord = words[0];
 
-/// 3.
-const cardToRemove = 'Карточка-3';
+  for (let i = 0; i < words.length; i++) {
+    if (words[i].length > longestWord.length) {
+      longestWord = words[i];
+    }
+  }
 
-const removeIndex = cards.indexOf(cardToRemove);
+  return longestWord;
+}
 
-cards.splice(removeIndex, 1);
-
-console.log(cards);
+console.log(findLongestWord('Я вивчаю JavaScript'));
 
 // 4.
-const cardToInsert = 'Карточка-6';
+function formatString(string) {
+  if (string.length <= 40) {
+    return string;
+  }
 
-cards.splice(cards.length, 0, cardToInsert);
+  return string.slice(0, 40) + '...';
+}
 
-console.log(cards);
+console.log(formatString('Це дуже довгий рядок який потрібно обрізати тому що він перевищує сорок символів'));
+
 
 // 5.
-const cardToUpdate = 'Карточка-4';
+function checkForSpam(message) {
+  const lowerCaseMessage = message.toLowerCase();
 
-const updateIndex = cards.indexOf(cardToUpdate);
+  return (
+    lowerCaseMessage.includes('spam') ||
+    lowerCaseMessage.includes('sale')
+  );
+}
 
-cards.splice(updateIndex, 1, 'Оновлена Карточка-4');
+console.log(checkForSpam('Latest SALE today'));
+console.log(checkForSpam('Hello friend'));
 
-console.log(cards);
+// 6.
+
+let input;
+const numbers = [];
+let total = 0;
+
+while (true) {
+  input = prompt('Введіть число');
+
+  if (input === null) {
+    break;
+  }
+
+  numbers.push(Number(input));
+}
+
+for (let i = 0; i < numbers.length; i++) {
+  total += numbers[i];
+}
+
+console.log(`Загальна сума чисел дорівнює ${total}`);
+
+// 7.
+const logins = ['Mango', 'Poly', 'Ajax'];
+
+function isLoginValid(login) {
+  return login.length >= 4 && login.length <= 16;
+}
+
+function isLoginUnique(allLogins, login) {
+  return !allLogins.includes(login);
+}
+
+function addLogin(allLogins, login) {
+  if (!isLoginValid(login)) {
+    return 'Помилка! Логін повинен бути від 4 до 16 символів';
+  }
+
+  if (!isLoginUnique(allLogins, login)) {
+    return 'Такий логін уже використовується!';
+  }
+
+  allLogins.push(login);
+
+  return 'Логін успішно доданий!';
+}
+
+console.log(addLogin(logins, 'Bohdan'));
+console.log(logins);
